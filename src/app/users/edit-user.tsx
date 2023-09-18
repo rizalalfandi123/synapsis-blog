@@ -1,8 +1,6 @@
 "use client";
 
-import Button from "@/components/button";
 import React from "react";
-import { createNewUser } from "./create-new-user.action";
 import type { UserForm as IUserForm, User } from "@/types";
 import { UserForm } from "./user-form";
 import { Pencil } from "lucide-react";
@@ -54,6 +52,8 @@ export function EditUser({ initialUser }: { initialUser: User }) {
         ref={dialog}
         className="w-screen md:w-96 bg-slate-800 text-slate-200 p-4 rounded-md backdrop:backdrop-blur-sm"
       >
+        <h1 className="mb-4 text-2xl text-left font-semibold">Edit User</h1>
+
         <UserForm
           isLoadingSubmit={loadingCreate}
           state={[form, setForm]}

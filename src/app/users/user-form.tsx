@@ -29,18 +29,16 @@ export function UserForm({
       if (event.target.checked) {
         setForm((prev) => ({
           ...prev,
-          gender: gender.toLocaleLowerCase() as UserForm["gender"],
+          gender: gender as UserForm["gender"],
         }));
       }
     };
 
   return (
     <form onSubmit={(event) => onSubmit(event, form)}>
-      <h1 className="mb-4 text-2xl font-semibold">Create User</h1>
-
       <div className="space-y-4">
         <label className="block">
-          <span className="block text-sm font-medium mb-1">Name</span>
+          <span className="block text-left text-sm font-medium mb-1">Name</span>
 
           <Input
             id="name"
@@ -54,7 +52,7 @@ export function UserForm({
         </label>
 
         <label className="block">
-          <span className="block text-sm font-medium mb-1">Email</span>
+          <span className="block text-left text-sm font-medium mb-1">Email</span>
 
           <Input
             id="email"
@@ -68,7 +66,7 @@ export function UserForm({
         </label>
 
         <fieldset>
-          <span className="block text-sm font-medium mb-1">Gender</span>
+          <span className="block text-left text-sm font-medium mb-1">Gender</span>
 
           <div className="flex gap-2">
             {["male", "female"].map((gender) => {
